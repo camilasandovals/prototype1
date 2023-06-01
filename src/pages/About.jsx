@@ -7,7 +7,7 @@ export default function About(){
             <Container>
                 <Row>
                     <Col>
-                        <h1>Hello</h1>
+                        <h2>About</h2>
                     </Col>
                 </Row>
             </Container>

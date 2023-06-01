@@ -2,19 +2,20 @@ import { Navbar, Container, Nav } from "react-bootstrap"
 import { Link } from "react-router-dom"
 export default function NavMenu(){
     return( 
+      <Navbar bg="danger" variant="dark" expand="md">
+        <Container>
+          <Navbar.Brand href="#home"><h1>Prototype 2.0</h1></Navbar.Brand>
 
-        <Navbar bg="light" expand="lg">
-      <Container>
-        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Link</Nav.Link>
-
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
-    )
+          <Navbar.Toggle aria-controls="navbar-nav" />
+          <Navbar.Collapse id="navbar-nav">
+            <Nav className="me-auto"> 
+            {/* ms-auto */}
+              <Nav.Link as={Link}to="/">Home</Nav.Link>
+              <Nav.Link as={Link}to="/about">About</Nav.Link>
+              <Nav.Link as={Link}to="/contact">Contact</Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+      )
 }
