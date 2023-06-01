@@ -1,11 +1,20 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/App.scss';
+import About from "./pages/About"
+import Home from "./pages/Home"
+import Error404 from './pages/Error404';
+
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
-    <>
-    hi
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/about' element={<About />} />
+        <Route path='/' element={<Home />} />
+        <Route path='*' element={<Error404 />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
