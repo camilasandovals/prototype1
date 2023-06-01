@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Col, Image, Modal } from "react-bootstrap";
+import { Col, Row, Container, Image, Modal } from "react-bootstrap";
 
 export default function Panel({element: {title, content, image}}) {
     const [show, setShow] = useState(false);
@@ -11,10 +11,20 @@ export default function Panel({element: {title, content, image}}) {
                 <Image src={image} fluid/>
                 <h3>{title}</h3>
             </div>
-            <Modal show={show} onHide={toggleShow}>
-                <Image src={image} fluid />
-                <h3>{title}</h3>
-                <p>{content}</p>
+            <Modal centered show={show} onHide={toggleShow} size="lg">
+                <Modal.Body>
+                    <Container>
+                        <Row>
+                            <Col xs={12} md={6}>
+                                <Image src={image} fluid />
+                            </Col>
+                            <Col xs={12} md={6}>
+                                <h3>{title}</h3>
+                                <p>{content}</p>
+                            </Col>
+                        </Row>
+                    </Container>
+                </Modal.Body>
             </Modal>
         </Col>
     )
